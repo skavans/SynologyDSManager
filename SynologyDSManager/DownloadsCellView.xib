@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="DownloadsCellView" customModule="SynologyDSManager" customModuleProvider="target">
+            <connections>
+                <outlet property="deleteButton" destination="epJ-mz-edv" id="Tbz-Bd-niq"/>
+                <outlet property="downloadNameLabel" destination="fBb-FO-MIJ" id="UgY-HK-xWp"/>
+                <outlet property="progressIndicator" destination="O1P-N5-wlx" id="fbG-4Q-afu"/>
+                <outlet property="progressLabel" destination="TWG-7G-uEp" id="Q8t-AX-EQ9"/>
+                <outlet property="startPauseButton" destination="IWS-aq-eJc" id="aXO-bA-N0p"/>
+                <outlet property="statusLabel" destination="Taw-hB-olt" id="3ip-UJ-UUY"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="688" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <progressIndicator wantsLayer="YES" fixedFrame="YES" maxValue="100" doubleValue="50" displayedWhenStopped="NO" controlSize="small" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="O1P-N5-wlx">
+                    <rect key="frame" x="0.0" y="-8" width="688" height="12"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                </progressIndicator>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fBb-FO-MIJ">
+                    <rect key="frame" x="45" y="27" width="472" height="16"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" title="Harry Potter and HalfBlood Prince 2019.mkv" id="plu-B8-NJu">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IWS-aq-eJc">
+                    <rect key="frame" x="7" y="11" width="32" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="round" title=" " bezelStyle="circular" image="NSTouchBarPauseTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DyU-ez-6Q8">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TWG-7G-uEp">
+                    <rect key="frame" x="45" y="11" width="393" height="14"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" title="1.3GB of 1.6GB (50%)" id="dL1-1w-fcJ">
+                        <font key="font" metaFont="label" size="11"/>
+                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="epJ-mz-edv">
+                    <rect key="frame" x="647" y="11" width="32" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                    <buttonCell key="cell" type="round" bezelStyle="circular" image="NSTouchBarDeleteTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5YY-zD-esu">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Taw-hB-olt">
+                    <rect key="frame" x="544" y="13" width="103" height="28"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                    <textFieldCell key="cell" controlSize="small" selectable="YES" alignment="center" title="Downloading... 178MB/s" id="lG2-lU-Tqn">
+                        <font key="font" metaFont="label" size="11"/>
+                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <point key="canvasLocation" x="-59" y="126"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="NSTouchBarDeleteTemplate" width="19" height="22"/>
+        <image name="NSTouchBarPauseTemplate" width="14" height="17"/>
+    </resources>
+</document>

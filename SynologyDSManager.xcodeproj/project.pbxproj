@@ -1,0 +1,748 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A098F6D244CCFB3001D2C8B /* BTSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A098F6C244CCFB3001D2C8B /* BTSearchViewController.swift */; };
+		3A098F77244E0D46001D2C8B /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A098F76244E0D46001D2C8B /* search.png */; };
+		3A098F79244FA9CF001D2C8B /* DestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A098F78244FA9CF001D2C8B /* DestinationView.swift */; };
+		3A098F7B244FAB46001D2C8B /* DestinationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A098F7A244FAB46001D2C8B /* DestinationView.xib */; };
+		3A098F7D244FB7C2001D2C8B /* ChooseDestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A098F7C244FB7C2001D2C8B /* ChooseDestViewController.swift */; };
+		3A2BEB3B2443C20D004B94A0 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2BEB3A2443C20D004B94A0 /* add.png */; };
+		3A2BEB3D2443C22F004B94A0 /* pause_all.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2BEB3C2443C22F004B94A0 /* pause_all.png */; };
+		3A2BEB3F2443C23F004B94A0 /* resume_all.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2BEB3E2443C23F004B94A0 /* resume_all.png */; };
+		3A2BEB492443C88D004B94A0 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2BEB482443C88C004B94A0 /* settings.png */; };
+		3A2BEB4C2443D580004B94A0 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 3A2BEB4B2443D580004B94A0 /* KeychainAccess */; };
+		3A2BEB4E2443DE8A004B94A0 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2BEB4D2443DE8A004B94A0 /* AboutViewController.swift */; };
+		3A2D5EF023D248B500B924EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2D5EEF23D248B500B924EE /* AppDelegate.swift */; };
+		3A2D5EF323D248B500B924EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A2D5EF123D248B500B924EE /* Main.storyboard */; };
+		3A2D5EF523D248B500B924EE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2D5EF423D248B500B924EE /* SettingsViewController.swift */; };
+		3A2D5EF723D248B700B924EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A2D5EF623D248B700B924EE /* Assets.xcassets */; };
+		3A2D5EFE23D248B700B924EE /* SynologyDSManager Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3A2D5EFD23D248B700B924EE /* SynologyDSManager Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3A2D5F0323D248B700B924EE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2D5F0223D248B700B924EE /* Cocoa.framework */; };
+		3A2D5F0623D248B700B924EE /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2D5F0523D248B700B924EE /* SafariExtensionHandler.swift */; };
+		3A2D5F0823D248B700B924EE /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2D5F0723D248B700B924EE /* SafariExtensionViewController.swift */; };
+		3A2D5F0B23D248B700B924EE /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A2D5F0923D248B700B924EE /* SafariExtensionViewController.xib */; };
+		3A2D5F0E23D248B700B924EE /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 3A2D5F0D23D248B700B924EE /* script.js */; };
+		3A2D5F1023D248B700B924EE /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3A2D5F0F23D248B700B924EE /* ToolbarItemIcon.pdf */; };
+		3A2D5F2023D6084300B924EE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3A2D5F1F23D6084300B924EE /* Alamofire */; };
+		3A2D5F2223D6097E00B924EE /* SynologyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2D5F2123D6097E00B924EE /* SynologyClient.swift */; };
+		3A42ADC7241CE9AB00F470ED /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A42ADC6241CE9AB00F470ED /* DownloadsViewController.swift */; };
+		3A42ADC9241CF39900F470ED /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A42ADC8241CF39900F470ED /* Settings.swift */; };
+		3A42ADCB241CFA7200F470ED /* DownloadsCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A42ADCA241CFA7200F470ED /* DownloadsCellView.xib */; };
+		3A42ADCD241CFD4900F470ED /* DownloadsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A42ADCC241CFD4900F470ED /* DownloadsCellView.swift */; };
+		3A42ADD1241D1BBB00F470ED /* LoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A42ADD0241D1BBB00F470ED /* LoadableView.swift */; };
+		3A42ADD3241EA37800F470ED /* AddDownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A42ADD2241EA37800F470ED /* AddDownloadViewController.swift */; };
+		3A42ADD5241F56CD00F470ED /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A42ADD4241F56CC00F470ED /* Shared.swift */; };
+		3A473966240E44680071E0FF /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 3A473965240E44680071E0FF /* SwiftyJSON */; };
+		473FAC2824437FC0002F61E4 /* broom.png in Resources */ = {isa = PBXBuildFile; fileRef = 473FAC2724437FC0002F61E4 /* broom.png */; };
+		47E28BAD24E550CA00A09AB1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 47E28BAC24E550CA00A09AB1 /* Alamofire */; };
+		47E28BC224E6E35B00A09AB1 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 47E28BC124E6E35B00A09AB1 /* logo.png */; };
+		47F4D01C24E54BE500A1E222 /* Swifter in Frameworks */ = {isa = PBXBuildFile; productRef = 47F4D01B24E54BE500A1E222 /* Swifter */; };
+		47F4D01E24E54BF300A1E222 /* Webserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F4D01D24E54BF300A1E222 /* Webserver.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A2D5EFF23D248B700B924EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A2D5EE223D248B500B924EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A2D5EFC23D248B700B924EE;
+			remoteInfo = "SynologyDSManager Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3A2D5F1723D248B700B924EE /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3A2D5EFE23D248B700B924EE /* SynologyDSManager Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3A098F6C244CCFB3001D2C8B /* BTSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTSearchViewController.swift; sourceTree = "<group>"; };
+		3A098F76244E0D46001D2C8B /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		3A098F78244FA9CF001D2C8B /* DestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationView.swift; sourceTree = "<group>"; };
+		3A098F7A244FAB46001D2C8B /* DestinationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DestinationView.xib; sourceTree = "<group>"; };
+		3A098F7C244FB7C2001D2C8B /* ChooseDestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDestViewController.swift; sourceTree = "<group>"; };
+		3A2BEB3A2443C20D004B94A0 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		3A2BEB3C2443C22F004B94A0 /* pause_all.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_all.png; sourceTree = "<group>"; };
+		3A2BEB3E2443C23F004B94A0 /* resume_all.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resume_all.png; sourceTree = "<group>"; };
+		3A2BEB482443C88C004B94A0 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		3A2BEB4D2443DE8A004B94A0 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		3A2D5EEA23D248B500B924EE /* SynologyDSManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SynologyDSManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A2D5EED23D248B500B924EE /* SynologyDSManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SynologyDSManager.entitlements; sourceTree = "<group>"; };
+		3A2D5EEF23D248B500B924EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3A2D5EF223D248B500B924EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3A2D5EF423D248B500B924EE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3A2D5EF623D248B700B924EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A2D5EF823D248B700B924EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A2D5EFD23D248B700B924EE /* SynologyDSManager Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SynologyDSManager Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A2D5F0223D248B700B924EE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		3A2D5F0523D248B700B924EE /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
+		3A2D5F0723D248B700B924EE /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
+		3A2D5F0A23D248B700B924EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
+		3A2D5F0C23D248B700B924EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A2D5F0D23D248B700B924EE /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
+		3A2D5F0F23D248B700B924EE /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
+		3A2D5F1123D248B700B924EE /* SynologyDSManager_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SynologyDSManager_Extension.entitlements; sourceTree = "<group>"; };
+		3A2D5F2123D6097E00B924EE /* SynologyClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynologyClient.swift; sourceTree = "<group>"; };
+		3A42ADC6241CE9AB00F470ED /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
+		3A42ADC8241CF39900F470ED /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		3A42ADCA241CFA7200F470ED /* DownloadsCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DownloadsCellView.xib; sourceTree = "<group>"; };
+		3A42ADCC241CFD4900F470ED /* DownloadsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsCellView.swift; sourceTree = "<group>"; };
+		3A42ADD0241D1BBB00F470ED /* LoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableView.swift; sourceTree = "<group>"; };
+		3A42ADD2241EA37800F470ED /* AddDownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDownloadViewController.swift; sourceTree = "<group>"; };
+		3A42ADD4241F56CC00F470ED /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
+		3AD002A8241FCF9B00559E83 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		473FAC2724437FC0002F61E4 /* broom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = broom.png; sourceTree = "<group>"; };
+		47E28BC124E6E35B00A09AB1 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		47F4D01D24E54BF300A1E222 /* Webserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webserver.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A2D5EE723D248B500B924EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A473966240E44680071E0FF /* SwiftyJSON in Frameworks */,
+				47F4D01C24E54BE500A1E222 /* Swifter in Frameworks */,
+				3A2D5F2023D6084300B924EE /* Alamofire in Frameworks */,
+				3A2BEB4C2443D580004B94A0 /* KeychainAccess in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A2D5EFA23D248B700B924EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A2D5F0323D248B700B924EE /* Cocoa.framework in Frameworks */,
+				47E28BAD24E550CA00A09AB1 /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A2D5EE123D248B500B924EE = {
+			isa = PBXGroup;
+			children = (
+				3A2D5EEC23D248B500B924EE /* SynologyDSManager */,
+				3A2D5F0423D248B700B924EE /* SynologyDSManager Extension */,
+				3A2D5F0123D248B700B924EE /* Frameworks */,
+				3A2D5EEB23D248B500B924EE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A2D5EEB23D248B500B924EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A2D5EEA23D248B500B924EE /* SynologyDSManager.app */,
+				3A2D5EFD23D248B700B924EE /* SynologyDSManager Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A2D5EEC23D248B500B924EE /* SynologyDSManager */ = {
+			isa = PBXGroup;
+			children = (
+				473FAC2624437F93002F61E4 /* icons */,
+				3A42ADD6241F57CE00F470ED /* ViewControllers */,
+				3A2D5EED23D248B500B924EE /* SynologyDSManager.entitlements */,
+				3A2D5EEF23D248B500B924EE /* AppDelegate.swift */,
+				3A2D5EF123D248B500B924EE /* Main.storyboard */,
+				3A2D5EF623D248B700B924EE /* Assets.xcassets */,
+				3A2D5EF823D248B700B924EE /* Info.plist */,
+				3A2D5F2123D6097E00B924EE /* SynologyClient.swift */,
+				3A42ADC8241CF39900F470ED /* Settings.swift */,
+				3A42ADCA241CFA7200F470ED /* DownloadsCellView.xib */,
+				3A42ADCC241CFD4900F470ED /* DownloadsCellView.swift */,
+				3A42ADD0241D1BBB00F470ED /* LoadableView.swift */,
+				3A42ADD4241F56CC00F470ED /* Shared.swift */,
+				3A098F78244FA9CF001D2C8B /* DestinationView.swift */,
+				3A098F7A244FAB46001D2C8B /* DestinationView.xib */,
+				47F4D01D24E54BF300A1E222 /* Webserver.swift */,
+			);
+			path = SynologyDSManager;
+			sourceTree = "<group>";
+		};
+		3A2D5F0123D248B700B924EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AD002A8241FCF9B00559E83 /* StoreKit.framework */,
+				3A2D5F0223D248B700B924EE /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A2D5F0423D248B700B924EE /* SynologyDSManager Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3A2D5F0523D248B700B924EE /* SafariExtensionHandler.swift */,
+				3A2D5F0723D248B700B924EE /* SafariExtensionViewController.swift */,
+				3A2D5F0923D248B700B924EE /* SafariExtensionViewController.xib */,
+				3A2D5F0C23D248B700B924EE /* Info.plist */,
+				3A2D5F0D23D248B700B924EE /* script.js */,
+				3A2D5F0F23D248B700B924EE /* ToolbarItemIcon.pdf */,
+				3A2D5F1123D248B700B924EE /* SynologyDSManager_Extension.entitlements */,
+			);
+			path = "SynologyDSManager Extension";
+			sourceTree = "<group>";
+		};
+		3A42ADD6241F57CE00F470ED /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A42ADC6241CE9AB00F470ED /* DownloadsViewController.swift */,
+				3A2D5EF423D248B500B924EE /* SettingsViewController.swift */,
+				3A2BEB4D2443DE8A004B94A0 /* AboutViewController.swift */,
+				3A42ADD2241EA37800F470ED /* AddDownloadViewController.swift */,
+				3A098F6C244CCFB3001D2C8B /* BTSearchViewController.swift */,
+				3A098F7C244FB7C2001D2C8B /* ChooseDestViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		473FAC2624437F93002F61E4 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				473FAC2724437FC0002F61E4 /* broom.png */,
+				3A2BEB3A2443C20D004B94A0 /* add.png */,
+				3A098F76244E0D46001D2C8B /* search.png */,
+				47E28BC124E6E35B00A09AB1 /* logo.png */,
+				3A2BEB3C2443C22F004B94A0 /* pause_all.png */,
+				3A2BEB3E2443C23F004B94A0 /* resume_all.png */,
+				3A2BEB482443C88C004B94A0 /* settings.png */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A2D5EE923D248B500B924EE /* SynologyDSManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A2D5F1823D248B700B924EE /* Build configuration list for PBXNativeTarget "SynologyDSManager" */;
+			buildPhases = (
+				3A2D5EE623D248B500B924EE /* Sources */,
+				3A2D5EE723D248B500B924EE /* Frameworks */,
+				3A2D5EE823D248B500B924EE /* Resources */,
+				3A2D5F1723D248B700B924EE /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A2D5F0023D248B700B924EE /* PBXTargetDependency */,
+			);
+			name = SynologyDSManager;
+			packageProductDependencies = (
+				3A2D5F1F23D6084300B924EE /* Alamofire */,
+				3A473965240E44680071E0FF /* SwiftyJSON */,
+				3A2BEB4B2443D580004B94A0 /* KeychainAccess */,
+				47F4D01B24E54BE500A1E222 /* Swifter */,
+			);
+			productName = SynologyDSManager;
+			productReference = 3A2D5EEA23D248B500B924EE /* SynologyDSManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3A2D5EFC23D248B700B924EE /* SynologyDSManager Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A2D5F1423D248B700B924EE /* Build configuration list for PBXNativeTarget "SynologyDSManager Extension" */;
+			buildPhases = (
+				3A2D5EF923D248B700B924EE /* Sources */,
+				3A2D5EFA23D248B700B924EE /* Frameworks */,
+				3A2D5EFB23D248B700B924EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SynologyDSManager Extension";
+			packageProductDependencies = (
+				47E28BAC24E550CA00A09AB1 /* Alamofire */,
+			);
+			productName = "SynologyDSManager Extension";
+			productReference = 3A2D5EFD23D248B700B924EE /* SynologyDSManager Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A2D5EE223D248B500B924EE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = skavans;
+				TargetAttributes = {
+					3A2D5EE923D248B500B924EE = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					3A2D5EFC23D248B700B924EE = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 3A2D5EE523D248B500B924EE /* Build configuration list for PBXProject "SynologyDSManager" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3A2D5EE123D248B500B924EE;
+			packageReferences = (
+				3A2D5F1E23D6084300B924EE /* XCRemoteSwiftPackageReference "Alamofire" */,
+				3A473964240E44680071E0FF /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				3A2BEB4A2443D580004B94A0 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				47F4D01A24E54BE500A1E222 /* XCRemoteSwiftPackageReference "swifter" */,
+			);
+			productRefGroup = 3A2D5EEB23D248B500B924EE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A2D5EE923D248B500B924EE /* SynologyDSManager */,
+				3A2D5EFC23D248B700B924EE /* SynologyDSManager Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A2D5EE823D248B500B924EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A2BEB3D2443C22F004B94A0 /* pause_all.png in Resources */,
+				3A098F7B244FAB46001D2C8B /* DestinationView.xib in Resources */,
+				3A42ADCB241CFA7200F470ED /* DownloadsCellView.xib in Resources */,
+				3A2BEB492443C88D004B94A0 /* settings.png in Resources */,
+				3A2BEB3F2443C23F004B94A0 /* resume_all.png in Resources */,
+				3A2BEB3B2443C20D004B94A0 /* add.png in Resources */,
+				3A098F77244E0D46001D2C8B /* search.png in Resources */,
+				3A2D5EF723D248B700B924EE /* Assets.xcassets in Resources */,
+				47E28BC224E6E35B00A09AB1 /* logo.png in Resources */,
+				3A2D5EF323D248B500B924EE /* Main.storyboard in Resources */,
+				473FAC2824437FC0002F61E4 /* broom.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A2D5EFB23D248B700B924EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A2D5F1023D248B700B924EE /* ToolbarItemIcon.pdf in Resources */,
+				3A2D5F0B23D248B700B924EE /* SafariExtensionViewController.xib in Resources */,
+				3A2D5F0E23D248B700B924EE /* script.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A2D5EE623D248B500B924EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A2D5F2223D6097E00B924EE /* SynologyClient.swift in Sources */,
+				3A2D5EF523D248B500B924EE /* SettingsViewController.swift in Sources */,
+				3A098F6D244CCFB3001D2C8B /* BTSearchViewController.swift in Sources */,
+				3A2BEB4E2443DE8A004B94A0 /* AboutViewController.swift in Sources */,
+				3A42ADD3241EA37800F470ED /* AddDownloadViewController.swift in Sources */,
+				3A42ADCD241CFD4900F470ED /* DownloadsCellView.swift in Sources */,
+				3A098F79244FA9CF001D2C8B /* DestinationView.swift in Sources */,
+				3A098F7D244FB7C2001D2C8B /* ChooseDestViewController.swift in Sources */,
+				3A42ADC7241CE9AB00F470ED /* DownloadsViewController.swift in Sources */,
+				3A2D5EF023D248B500B924EE /* AppDelegate.swift in Sources */,
+				47F4D01E24E54BF300A1E222 /* Webserver.swift in Sources */,
+				3A42ADD5241F56CD00F470ED /* Shared.swift in Sources */,
+				3A42ADD1241D1BBB00F470ED /* LoadableView.swift in Sources */,
+				3A42ADC9241CF39900F470ED /* Settings.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A2D5EF923D248B700B924EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A2D5F0823D248B700B924EE /* SafariExtensionViewController.swift in Sources */,
+				3A2D5F0623D248B700B924EE /* SafariExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A2D5F0023D248B700B924EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A2D5EFC23D248B700B924EE /* SynologyDSManager Extension */;
+			targetProxy = 3A2D5EFF23D248B700B924EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3A2D5EF123D248B500B924EE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A2D5EF223D248B500B924EE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3A2D5F0923D248B700B924EE /* SafariExtensionViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A2D5F0A23D248B700B924EE /* Base */,
+			);
+			name = SafariExtensionViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3A2D5F1223D248B700B924EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3A2D5F1323D248B700B924EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		3A2D5F1523D248B700B924EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "SynologyDSManager Extension/SynologyDSManager_Extension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = GVS9699BGK;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SynologyDSManager\\ Extension",
+				);
+				INFOPLIST_FILE = "SynologyDSManager Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skavans.synologyDSManager.extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3A2D5F1623D248B700B924EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "SynologyDSManager Extension/SynologyDSManager_Extension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = GVS9699BGK;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SynologyDSManager\\ Extension",
+				);
+				INFOPLIST_FILE = "SynologyDSManager Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skavans.synologyDSManager.extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		3A2D5F1923D248B700B924EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SynologyDSManager/SynologyDSManager.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 12;
+				DEVELOPMENT_TEAM = GVS9699BGK;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Sparkle\\ Updater",
+					"$(PROJECT_DIR)/Sparkle\\ Updater",
+					"$(PROJECT_DIR)/Sparkle\\ Updater",
+					"$(PROJECT_DIR)/Sparkle\\ Updater",
+					"$(PROJECT_DIR)/Extern/Sparkle-2.0.0",
+					"$(PROJECT_DIR)/Sparkle\\ Updater",
+				);
+				INFOPLIST_FILE = SynologyDSManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.4.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skavans.synologyDSManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3A2D5F1A23D248B700B924EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SynologyDSManager/SynologyDSManager.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 12;
+				DEVELOPMENT_TEAM = GVS9699BGK;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Sparkle\\ Updater",
+					"$(PROJECT_DIR)/Sparkle\\ Updater",
+					"$(PROJECT_DIR)/Sparkle\\ Updater",
+					"$(PROJECT_DIR)/Sparkle\\ Updater",
+					"$(PROJECT_DIR)/Extern/Sparkle-2.0.0",
+					"$(PROJECT_DIR)/Sparkle\\ Updater",
+				);
+				INFOPLIST_FILE = SynologyDSManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.4.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skavans.synologyDSManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A2D5EE523D248B500B924EE /* Build configuration list for PBXProject "SynologyDSManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A2D5F1223D248B700B924EE /* Debug */,
+				3A2D5F1323D248B700B924EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A2D5F1423D248B700B924EE /* Build configuration list for PBXNativeTarget "SynologyDSManager Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A2D5F1523D248B700B924EE /* Debug */,
+				3A2D5F1623D248B700B924EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A2D5F1823D248B700B924EE /* Build configuration list for PBXNativeTarget "SynologyDSManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A2D5F1923D248B700B924EE /* Debug */,
+				3A2D5F1A23D248B700B924EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A2BEB4A2443D580004B94A0 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+		3A2D5F1E23D6084300B924EE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = "5.0.0-rc.3";
+			};
+		};
+		3A473964240E44680071E0FF /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		47F4D01A24E54BE500A1E222 /* XCRemoteSwiftPackageReference "swifter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/httpswift/swifter.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A2BEB4B2443D580004B94A0 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A2BEB4A2443D580004B94A0 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		3A2D5F1F23D6084300B924EE /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A2D5F1E23D6084300B924EE /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		3A473965240E44680071E0FF /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A473964240E44680071E0FF /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		47E28BAC24E550CA00A09AB1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A2D5F1E23D6084300B924EE /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		47F4D01B24E54BE500A1E222 /* Swifter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47F4D01A24E54BE500A1E222 /* XCRemoteSwiftPackageReference "swifter" */;
+			productName = Swifter;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 3A2D5EE223D248B500B924EE /* Project object */;
+}
