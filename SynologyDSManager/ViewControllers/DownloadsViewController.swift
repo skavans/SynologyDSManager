@@ -8,7 +8,6 @@
 
 import Cocoa
 import Foundation
-import UserNotifications
 
 import SwiftyJSON
 
@@ -85,16 +84,11 @@ class DownloadsViewController: NSViewController, NSWindowDelegate {
     
     
     private func notificateTaskFinished(title: String) {
-        let content = UNMutableNotificationContent()
-        content.title = "Task finished"
-        content.body = title
-        content.sound = .default
-        let request = UNNotificationRequest(
-            identifier: UUID().uuidString,
-            content: content,
-            trigger: nil
-        )
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        let notification = NSUserNotification()
+        notification.title = "Task finished"
+        notification.informativeText = title
+        notification.soundName = NSUserNotificationDefaultSoundName
+        NSUserNotificationCenter.default.deliver(notification)
     }
     
     
@@ -152,15 +146,10 @@ class DownloadsViewController: NSViewController, NSWindowDelegate {
     public func downloadByURLFromExtension(URL: String) {
         registerEvent(type: "firstExtensionUse", unique: true)
         DispatchQueue.main.async {
-            let content = UNMutableNotificationContent()
-            content.title = "Download started"
-            content.subtitle = "URL content is downloading at Synology DS"
-            let request = UNNotificationRequest(
-                identifier: UUID().uuidString,
-                content: content,
-                trigger: nil
-            )
-            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            let notification = NSUserNotification()
+            notification.title = "Download started"
+            notification.subtitle = "URL content is downloading at Synology DS"
+            NSUserNotificationCenter.default.deliver(notification)
             let extensionDestination = userDefaults.string(forKey: "destinationSelectedPath_extension")
             synologyClient?.startDownload(URL: URL, destination: extensionDestination)
         }
@@ -220,19 +209,17 @@ class DownloadsViewController: NSViewController, NSWindowDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+                
         registerEvent(type: "firstOpen", unique: true)
-
+        
         mainViewController = self
         mainMethod = self.doWork
-
+        
         downloadsTableView.delegate = self
         downloadsTableView.dataSource = self
-
+        
         self.initStatusBar()
-
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { _, _ in }
-
+        
         if !(userDefaults.value(forKey: "hideDockIcon") as? Bool ?? true) {
             NSApp.setActivationPolicy(.regular)
         }
