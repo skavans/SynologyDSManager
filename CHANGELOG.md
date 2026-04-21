@@ -12,10 +12,26 @@ commit that makes them.
 ## [Unreleased]
 
 ### Added
-- `CLAUDE.md` — orientation file for future AI-assisted work on the repo.
+- `CLAUDE.md` — orientation file for future AI-assisted work on the repo,
+  now including a *Public-repo best practices* section (secrets handling,
+  log redaction, release/signing rules) and a *Code signing* section.
 - `MODERNIZATION_PLAN.md` — phased roadmap with a per-phase task checklist
   that is kept up to date as work lands.
 - `CHANGELOG.md` (this file).
+- `deploy.sh` — interactive single-key maintainer menu:
+  - `p` pull `main` from origin into local `main`
+  - `o` open in Xcode
+  - `s` configure signing (writes `Signing.local.xcconfig`)
+  - `i` build Release and install to `/Applications`
+  - `d` build Release and produce a signed (and, if credentials are
+        configured, notarised) DMG
+- `Signing.xcconfig` + `Signing.local.xcconfig.template` — xcconfig cascade
+  that keeps Apple Developer Team IDs out of the public repo. The local
+  override is gitignored and is wired as `baseConfigurationReference` on
+  both project-level build configurations, so Xcode GUI builds and
+  `xcodebuild` both pick up the Team ID automatically.
+- Gitignore entries for `Signing.local.xcconfig`, `.notary-profile-name`,
+  `build/`, `dist/`, and `.DS_Store`.
 - GitHub Actions CI workflow (`build`, `SwiftLint`, `SwiftFormat --lint`).
 - `CODEOWNERS`, PR template, and bug / feature / security issue templates.
 - `.swiftlint.yml`, `.swiftformat`, `.swift-version` — initial lint/format
@@ -47,8 +63,11 @@ commit that makes them.
 
 ### Removed
 - Stale `DEVELOPMENT_TEAM = GVS9699BGK` (the previous maintainer's Apple
-  team) from both targets' build configurations. Build now requires the
-  current developer to set their own team in Signing & Capabilities.
+  team) from both targets' build configurations. The current developer's
+  Team ID is now supplied via the gitignored `Signing.local.xcconfig`.
+- Target-level hard-coded `CODE_SIGN_IDENTITY = "Apple Development"`, so the
+  xcconfig's conditional identity (Apple Development for Debug, Developer ID
+  Application for Release) wins.
 - Dead `FRAMEWORK_SEARCH_PATHS` entries referencing a non-existent
   `Sparkle Updater` directory.
 - Unused `StoreKit.framework` reference (leftover from the paid-app IAP

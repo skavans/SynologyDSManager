@@ -29,8 +29,18 @@ Goal: a clean, lintable, CI-backed baseline for everything that follows.
       security-report issue templates
 - [x] Rewrite `README.md` for the forked, maintained state
 - [x] Add `CLAUDE.md`, `MODERNIZATION_PLAN.md`, `CHANGELOG.md`
+- [x] Document public-repo best practices in `CLAUDE.md` (secrets handling,
+      log redaction, release/signing discipline)
+- [x] Add `deploy.sh` single-key maintainer menu (pull main / open in Xcode /
+      configure signing / install to Applications / create DMG)
+- [x] Set up `Signing.xcconfig` + gitignored `Signing.local.xcconfig` so
+      Apple Developer Team IDs stay out of the public repo, with the
+      xcconfig wired as `baseConfigurationReference` in `project.pbxproj`
+- [ ] Add a `SECURITY.md` policy at the repo root referencing GitHub Security
+      Advisories for private disclosure
 - [ ] Flip SwiftLint / SwiftFormat CI jobs to blocking once the repo is
       fully formatted (follow-up PR)
+- [ ] Pin third-party GitHub Actions by commit SHA (currently by tag)
 
 ## Phase 1 — Platform baseline · **In progress**
 

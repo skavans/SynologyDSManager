@@ -1,0 +1,20 @@
+// Signing.local.xcconfig.template
+//
+// 1. Copy this file to `Signing.local.xcconfig`.
+// 2. Replace YOUR_TEAM_ID_HERE with your 10-character Apple Developer Team ID.
+// 3. Do NOT commit `Signing.local.xcconfig`. It is already gitignored.
+//
+// Where to find your Team ID:
+//   - https://developer.apple.com/account  →  Membership details
+//   - Xcode → Settings → Accounts → select your Apple ID → team ID column
+//
+// Team IDs are 10 uppercase alphanumeric characters, e.g. ABCDE12345.
+
+DEVELOPMENT_TEAM = YOUR_TEAM_ID_HERE
+
+// (Optional) If you have multiple signing identities in your keychain and
+// want to force a specific one for notarised builds, uncomment below and
+// set the exact string that appears after the identity's common name, e.g.
+// "Developer ID Application: Your Name (ABCDE12345)":
+//
+// CODE_SIGN_IDENTITY[sdk=macosx*][config=Release] = Developer ID Application: Your Name (ABCDE12345)

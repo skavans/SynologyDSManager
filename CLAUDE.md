@@ -48,13 +48,24 @@ human, `README.md` is a better starting point.
 
 ## Commands
 
+Most day-to-day maintainer tasks go through the interactive helper:
+
+```sh
+./deploy.sh
+```
+
+…which offers single-key options for pulling `main`, opening in Xcode,
+configuring signing, installing to `/Applications`, and building a
+distributable DMG (optionally notarised). See the top of `deploy.sh` for the
+key bindings. Underneath, the script just calls the commands below.
+
 ```sh
 # Resolve Swift Package dependencies headlessly:
 xcodebuild -project SynologyDSManager.xcodeproj \
   -scheme SynologyDSManager \
   -resolvePackageDependencies
 
-# Build (unsigned) from the command line:
+# Build (unsigned) from the command line — CI uses this exact invocation:
 xcodebuild -project SynologyDSManager.xcodeproj \
   -scheme SynologyDSManager \
   -configuration Debug \
@@ -71,6 +82,73 @@ swiftformat --lint .
 
 There are **no automated tests yet**. A test target is added in Phase 2
 alongside the networking rewrite.
+
+## Code signing
+
+Signing is driven by an **xcconfig cascade** so no Team ID ever lands in the
+public repo:
+
+- `Signing.xcconfig` (committed, no secrets) — defines defaults:
+  `Apple Development` for Debug, `Developer ID Application` for Release,
+  `CODE_SIGN_STYLE = Automatic`, and a trailing `#include? "Signing.local.xcconfig"`.
+- `Signing.local.xcconfig` (gitignored, per-developer) — sets the single
+  variable that matters: `DEVELOPMENT_TEAM`.
+- `Signing.local.xcconfig.template` (committed) — the file maintainers copy
+  to create their own `Signing.local.xcconfig`.
+
+The xcconfig is wired as `baseConfigurationReference` on the project-level
+build configurations, so both Xcode GUI builds and `xcodebuild` from the
+command line pick it up automatically.
+
+**Do not** re-introduce `DEVELOPMENT_TEAM = …` in `project.pbxproj`,
+hard-code a specific identity name, or commit `Signing.local.xcconfig`.
+
+To set up a new maintainer machine: run `./deploy.sh` → `s`.
+
+## Public-repo best practices
+
+This repo is public. Every commit, every issue, every CI log is world-readable.
+When in doubt, leak nothing.
+
+**Never commit:**
+- Apple Developer Team IDs, provisioning profiles, `.p12`/`.cer` files, App
+  Store Connect API keys, notarisation credentials. `Signing.local.xcconfig`
+  and `.notary-profile-name` are already gitignored — keep them that way.
+- `.env` files, SSH keys, AWS/GCP tokens, Slack/Discord webhooks.
+- `xcuserdata/`, `DerivedData/`, `.DS_Store`, editor-local configs.
+- Real Synology NAS credentials, even in test fixtures. Use obvious
+  placeholders (`user@example.com`, `ABCDE12345`).
+
+**When logging, screenshotting, or pasting into issues:**
+- Redact `_sid=…`, cookies, `Authorization` headers, session IDs, and any
+  query string that might contain a password or OTP.
+- Redact LAN IPs, DDNS hostnames, and QuickConnect IDs — they identify a
+  specific user's NAS.
+- Sample issue-tracking stance: if the issue template doesn't have a redaction
+  reminder, add one before merging the template change.
+
+**When accepting contributions:**
+- Review diffs for hard-coded secrets before approving PRs. GitHub's
+  secret-scanning catches a lot but not everything.
+- Pin third-party GitHub Actions by commit SHA, not by tag. Tags are
+  mutable; SHAs are not.
+- Prefer SwiftPM dependencies that are themselves open-source and actively
+  maintained. Commit `Package.resolved` so CI reproduces exact versions.
+- Never run `curl | sh` in CI or in any script we ship.
+
+**Releases:**
+- Tag releases (`v2.0.0`, `v2.1.0`, …) and cut them through GitHub Releases,
+  not by pushing binaries directly to `main`.
+- Sign *and* notarise distribution builds before attaching them to a release.
+  An unsigned `.app` off GitHub will trigger Gatekeeper prompts on every user
+  machine.
+- Never force-push `main`. Never skip commit hooks (`--no-verify`) unless the
+  hook itself is broken and you're fixing it in the same PR.
+
+**Security disclosures:**
+- Accept reports via GitHub Security Advisories (private), not public issues.
+- Keep a brief `SECURITY.md` policy at the repo root (planned as a Phase 0
+  follow-up).
 
 ## How to land a change
 

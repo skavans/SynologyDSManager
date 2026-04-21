@@ -33,12 +33,24 @@ See [`MODERNIZATION_PLAN.md`](./MODERNIZATION_PLAN.md) for the phased roadmap an
 ```sh
 git clone https://github.com/lotech/synologydsmanager.git
 cd synologydsmanager
-open SynologyDSManager.xcodeproj
+./deploy.sh        # interactive helper — see below
 ```
 
-Set your own Apple Developer team in both targets' **Signing & Capabilities** tab
-(the original project's team ID has been removed). Build the `SynologyDSManager`
-scheme for macOS.
+`deploy.sh` is a single-key menu:
+
+| Key | Action |
+|-----|--------|
+| `p` | Pull `main` from origin into the local `main` branch |
+| `o` | Open the Xcode project |
+| `s` | Configure code signing (writes `Signing.local.xcconfig`) |
+| `i` | Build Release and install to `/Applications` |
+| `d` | Build Release and create a distributable DMG (optionally notarised) |
+| `q` | Quit |
+
+First run should be `s` — it'll prompt for your **Apple Developer Team ID**
+and write it to `Signing.local.xcconfig`, which is gitignored so your Team ID
+never ends up in the public repo. All subsequent builds (both from Xcode and
+from `deploy.sh`) pick it up automatically via the `Signing.xcconfig` cascade.
 
 Swift Package dependencies are resolved automatically by Xcode. Current third-party
 dependencies (being phased out — see Phase 2 of the plan):
@@ -47,6 +59,24 @@ dependencies (being phased out — see Phase 2 of the plan):
 - SwiftyJSON
 - KeychainAccess
 - Swifter
+
+### Signing & distribution
+
+- **Debug builds** sign with your `Apple Development` certificate.
+- **Release builds** sign with your `Developer ID Application` certificate
+  (create one in Xcode → Settings → Accounts → Manage Certificates → **+**
+  → *Developer ID Application*).
+- **DMGs** are signed, and are **notarised automatically** by `deploy.sh` if
+  you've stored notarisation credentials in a keychain profile and written
+  the profile name to `.notary-profile-name` (gitignored). Set up once via:
+
+  ```sh
+  xcrun notarytool store-credentials "SynologyDSManager-Notary" \
+      --apple-id "you@example.com" \
+      --team-id  "ABCDE12345" \
+      --password "<app-specific-password>"
+  echo SynologyDSManager-Notary > .notary-profile-name
+  ```
 
 ## Project layout
 
