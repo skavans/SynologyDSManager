@@ -8,7 +8,7 @@
 
 import Cocoa
 
-protocol LoadableView: class {
+protocol LoadableView: AnyObject {
     var mainView: NSView? { get set }
     func load(fromNIBNamed nibName: String) -> Bool
 }

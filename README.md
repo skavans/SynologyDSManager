@@ -1,44 +1,81 @@
 # SynologyDSManager
-Manage your `Synology DownloadStation` tasks right from your Mac's native app and Safari/Chrome extension.
-![screenshot](https://github.com/skavans/SynologyDSManager/assets/6472406/e1355a86-85dd-4145-83d2-cb381a29955e)
 
-```
-The app was initially developed by myself and for myself.
-Then, for some time, it was the paid app, and I developed it following the customers' feature requests.
+A native macOS app (and Safari extension) for managing a Synology DownloadStation remotely.
 
-Since 2022, the Paddle platform I used for distributing the app, stopped working with sellers from Russia so I stopped working on this app.
-Now in 2023 I decided to open-source it as is so you can use it for free.
+This is a maintained fork of the original [skavans/SynologyDSManager](https://github.com/skavans/SynologyDSManager),
+which was archived in 2023. Goals of the fork:
 
-I don't think I will actively improve the app by myself, but PRs for adding new features or fixing bugs are welcomed.
-```
+- modernise the codebase (SwiftUI, Swift concurrency, current macOS APIs)
+- run a full security audit and fix the outstanding issues
+- add new features after the modernisation baseline is in place
 
-## Overview
-
-SynologyDSManager is the **macOS application for your Synology Download Station** working in 2023 on both macOS Ventura and Safari 16 (needs extra testing). Apple Silicon M1 is also supported.
-
-Embedded **Synology Download Station Safari Extension** allows you to add new download tasks right from your Safari browser in just one click (may not work with some wesbites which are using JavaScript to start the downloading).
+See [`MODERNIZATION_PLAN.md`](./MODERNIZATION_PLAN.md) for the phased roadmap and
+[`CHANGELOG.md`](./CHANGELOG.md) for a running list of changes.
 
 ## Features
-![settings](https://github.com/skavans/SynologyDSManager/assets/6472406/64c9b588-8c9d-4436-9af4-b404f960db7a)
 
-- your Synology Download Station connection credentials are securely stored in macOS keychain;
-- 2-step authentication (2FA) support;
-- activate the **Safari Extension** to easily add new Synology Download Station tasks right from Safari;
-- select any shared folder as the download destination;
-- hide Dock icon option;
+- Browse, pause, resume, and delete Download Station tasks from a native Mac window
+- Add new tasks from `.torrent` files, magnet links, or direct URLs — in bulk
+- Pick any shared folder on the NAS as the download destination
+- Search BT trackers directly from the app and enqueue results in one click
+- Menu-bar status item with live bandwidth readout
+- Safari extension: "Download with Synology DS Manager" from the page context menu
+- 2-step verification (TOTP) supported
 
-![add_download](https://github.com/skavans/SynologyDSManager/assets/6472406/7518ac05-951e-4369-b5f6-8d111d1046d8)
+## Requirements
 
-- submit new Synology Download Station download tasks right from your Mac;
-- simultaneously specify up to multiple torrent-files and/or direct download URLs;
+- macOS 13 (Ventura) or newer
+- Xcode 15 or newer to build
+- A reachable Synology DSM 6.2+ installation with Download Station installed
 
-![search](https://github.com/skavans/SynologyDSManager/assets/6472406/ecdd2ce5-77cf-4830-8560-e17b0eb75e2f)
+## Building
 
-- search for new torrens right from the application;
-- submit the search results as new Synology Download Station tasks in just one click;
+```sh
+git clone https://github.com/lotech/synologydsmanager.git
+cd synologydsmanager
+open SynologyDSManager.xcodeproj
+```
 
-- Chrome extension (companion).
+Set your own Apple Developer team in both targets' **Signing & Capabilities** tab
+(the original project's team ID has been removed). Build the `SynologyDSManager`
+scheme for macOS.
 
-# Reviews
-https://www.synoforum.com/threads/synology-ds-manager-download-station-macos-app-and-safari-extension-2020-new.2475/
-https://www.reddit.com/r/synology/comments/g3v4dm/synology_ds_manager_macos_application_and_safari/
+Swift Package dependencies are resolved automatically by Xcode. Current third-party
+dependencies (being phased out — see Phase 2 of the plan):
+
+- Alamofire
+- SwiftyJSON
+- KeychainAccess
+- Swifter
+
+## Project layout
+
+```
+SynologyDSManager/            # Main macOS app target
+  AppDelegate.swift
+  SynologyClient.swift        # DSM API client (to be rewritten in Phase 2)
+  Settings.swift              # Keychain-backed credential store
+  Webserver.swift             # Local HTTP bridge (to be removed in Phase 3)
+  ViewControllers/            # Cocoa controllers (to be ported to SwiftUI in Phase 4)
+  Base.lproj/Main.storyboard
+
+SynologyDSManager Extension/  # Legacy Safari App Extension (to be migrated in Phase 3)
+```
+
+## Contributing
+
+Issues and PRs are welcome. Please read [`CLAUDE.md`](./CLAUDE.md) for a short
+orientation to how the codebase is structured and the conventions we're moving
+towards, and check [`MODERNIZATION_PLAN.md`](./MODERNIZATION_PLAN.md) to see where
+your change fits.
+
+## Security
+
+Report security issues privately via GitHub Security Advisories rather than
+public issues, especially anything involving credential handling, TLS, the local
+HTTP bridge, or the Safari extension's URL-scheme fallback.
+
+## Licence
+
+MIT — see [`LICENSE`](./LICENSE). Original copyright © 2020–2023 skavans;
+modernisation work © 2024–present contributors.
