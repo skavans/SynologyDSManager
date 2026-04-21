@@ -88,3 +88,16 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+# Local code-signing overrides — your Apple Developer Team ID lives here.
+# Never commit this file to a public repo. Use Signing.local.xcconfig.template
+# as a starting point.
+Signing.local.xcconfig
+
+# Build artefacts produced by ./deploy.sh
+build/
+dist/
+.notary-profile-name
+
+# macOS noise
+.DS_Store

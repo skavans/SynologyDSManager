@@ -8,6 +8,7 @@
 
 import Cocoa
 import Foundation
+import UniformTypeIdentifiers
 
 
 class AddDownloadViewController: NSViewController {
@@ -30,27 +31,25 @@ class AddDownloadViewController: NSViewController {
     }
     
     @IBAction func chooseTorrentFileButtonClicked(_ sender: Any) {
-        let dialog = NSOpenPanel();
-        
-        dialog.title                   = "Choose one or multiple torrent-files";
-        dialog.showsResizeIndicator    = true;
-        dialog.showsHiddenFiles        = false;
-        dialog.canChooseDirectories    = false;
-        dialog.canCreateDirectories    = false;
-        dialog.allowsMultipleSelection = true;
-        dialog.allowedFileTypes        = ["torrent"];
+        let dialog = NSOpenPanel()
 
-        if (dialog.runModal() == NSApplication.ModalResponse.OK) {
-            
-            self.tasksTextView.string = dialog.urls.reduce("", {acc, url in
-                return acc + "\(url.path)\n"
-            }) + self.tasksTextView.string
-            
-            self.tasksTextView.delegate?.textDidChange?(Notification(name: .init("textChanged")))
-            
-        } else {
-            return
+        dialog.title = "Choose one or multiple torrent-files"
+        dialog.showsResizeIndicator = true
+        dialog.showsHiddenFiles = false
+        dialog.canChooseDirectories = false
+        dialog.canCreateDirectories = false
+        dialog.allowsMultipleSelection = true
+        if let torrentType = UTType(filenameExtension: "torrent") {
+            dialog.allowedContentTypes = [torrentType]
         }
+
+        guard dialog.runModal() == NSApplication.ModalResponse.OK else { return }
+
+        self.tasksTextView.string = dialog.urls.reduce("") { acc, url in
+            acc + "\(url.path)\n"
+        } + self.tasksTextView.string
+
+        self.tasksTextView.delegate?.textDidChange?(Notification(name: .init("textChanged")))
     }
     
     override func viewDidLoad() {
